@@ -3,7 +3,6 @@
 
 [![commits](https://img.shields.io/github/last-commit/phuycke/Project-Euler)](https://img.shields.io/github/last-commit/phuycke/Project-Euler)
 [![repo_size](https://img.shields.io/github/repo-size/phuycke/Project-Euler)](https://img.shields.io/github/repo-size/phuycke/Project-Euler)
-![title](https://projecteuler.net/profile/flyinthelotion.png)
 
 ## What is this GitHub page about?   
 
@@ -40,6 +39,7 @@ An example is [help_8.txt][help_8_git], which is an exact representation of the 
 [help_8_git]: https://github.com/phuycke/Project-Euler/blob/master/help_files/help_08.txt
 [prob_8_euler]: https://projecteuler.net/problem=8
 
+
 ## Programming environment   
 
 All programs were written using the software defined below.
@@ -73,6 +73,12 @@ All programs were written using the software defined below.
 [anaconda]: https://www.anaconda.com/distribution/
 
 ## Contact
+
+### Project Euler
+
+![title](https://projecteuler.net/profile/flyinthelotion.png)
+
+### Real world
 
 Author: &nbsp;Pieter Huycke  
 
