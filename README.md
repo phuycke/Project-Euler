@@ -1,46 +1,44 @@
 
-# The practice of computing using Python 3
+# Project Euler
 
-[![GitHub license](https://img.shields.io/apm/l/test.svg)](https://github.com/phuycke/Practice-of-computing-using-Python/blob/master/LICENSE)
-[![Commits](https://img.shields.io/github/last-commit/phuycke/Practice-of-computing-using-Python)](https://img.shields.io/github/last-commit/phuycke/Practice-of-computing-using-Python)
-[![Issues](https://img.shields.io/github/issues/phuycke/Practice-of-computing-using-Python)](https://img.shields.io/github/issues/phuycke/Practice-of-computing-using-Python)
+[![commits](https://img.shields.io/github/last-commit/phuycke/Project-Euler)](https://img.shields.io/github/last-commit/phuycke/Project-Euler)
+[![repo_size](https://img.shields.io/github/repo-size/phuycke/Project-Euler)](https://img.shields.io/github/repo-size/phuycke/Project-Euler)
+![title](https://projecteuler.net/profile/flyinthelotion.png)
 
-## Used folder structure   
+## What is this GitHub page about?   
+
+This GitHub page lists my solutions to the problems defined in the [Project Euler archives][archives].   
+All these solutions are written in Python 3, and every solution that is posted on this GitHub is able to find the correct solution.
+
+[archives]: https://projecteuler.net/archives
+
+## Folder structure
 
 In this paragraph, we will quickly explain the folder structure that is used in this repository.
 
 ---
 
-The folder is organized by following the organization of the book:
+There are **only two** folders in the root directory:
 
-- Part 2
-- Part 3
-- ...
-- Part 5
+- Code
+- Other
 
-With 'the book' referring to _'The practice of computing using Python 3'_, written by William Punch and Richard Enbody in 2011.   
-Within each _Part x_ folder, one can find several other folders.
+### Code
 
---- 
+The **code** directory contains all the code that was used to solve the computational problems.   
+The file names indicate what problem was solved.
+In other words, [problem_1.py][prob_1_git] is a solution to ['Multiples of 3 and 5'][prob_1_euler], the first problem in a long row of problems defined in the Project Euler Archives.
 
-The aforementioned folders have the following lay-out:
+[prob_1_git]: https://github.com/phuycke/Project-Euler/blob/master/Code/problem_01.py
+[prob_1_euler]: https://projecteuler.net/problem=1
 
-- Chapter xx
-- Chapter xx
-- ...
-- Chapter xx
+### Other
 
-With xx being an integer. Note that '1' will be written as '01'. This was done to make the folder structure look cleaner. Also note that these folders refer to the chapters in the book, in line with the _Part x_ folders that referred to the parts described in the book. So, the directory _Chapter 01_ 
+The **Other** directory contains extra information or data that is useful for solving the defined problems.   
+An example is [help_8.txt][help_8_git], which is an exact representation of the numbers depicted in [problem 8][prob_8_euler].
 
----
-
-Finally, within each chapter folder, another specific structure is enforced:
-
-- Exercises
-    - Used to store Python 3 code that is used to solve exercises
-        - Mind that this folder was created because some theory questions can only be solved using a Python project. Because these problems were not defined as _'programming projects'_, I kept them in a separate folder
-- Programming projects
-    - Used to store Python 3 code used to tackle the programming projects defined in that chapter
+[help_8_git]: https://github.com/phuycke/Project-Euler/blob/master/help_files/help_08.txt
+[prob_8_euler]: https://projecteuler.net/problem=8
 
 ## Programming environment   
 
