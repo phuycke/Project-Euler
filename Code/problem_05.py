@@ -11,9 +11,9 @@ GitHub:  phuycke
 
 #%%
 
-import numpy as np
+import numpy      as     np
 
-from problem_03 import prime_factorize
+from   problem_03 import prime_factorize
 
 #%%
 

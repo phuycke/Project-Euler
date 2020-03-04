@@ -1,39 +1,57 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-# Problem setting
+
 """
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-What is the 10 001st prime number?
+@author: Pieter Huycke
+email:   pieter.huycke@ugent.be
+GitHub:  phuycke
 """
 
-def isPrime(integer):
-    """Returns True  if the number is a prime, returns False otherwise."""
 
-    is_prime = True
-    start = 2
-    if integer == 2:
-        return True
-    else:
-        while is_prime and start < integer:
-            if integer % start == 0:
-                is_prime = False
-            else:
-                start += 1
-    return is_prime
+#%%
 
-def countPrimes(quantity):
-    """Records all primes in a list until the list has a length of n. Then returns the reversed prime number list."""
+import numpy      as     np
 
-    primeList = [2,3,5,7,11,13]
-    number = primeList[-1] + 2
-    while len(primeList) != quantity:
-        if isPrime(number):
-            primeList.append(number)
+from   problem_03 import is_prime
+
+#%%
+
+
+def countPrimes(n : int) -> int:
+    """
+    Returns the nth prime number
+
+    Parameters
+    ----------
+    n : int
+        Which prime number do we need?
+
+    Returns
+    -------
+    int
+        Returns the nth prime number as an integer.
+
+    """
+
+
+    prime_list     = np.zeros(n, dtype = int)
+    prime_list[:6] = [2, 3, 5, 7, 11, 13]
+    number         = prime_list[5] + 2
+    indx           = 6
+    
+    # the actual compilation of primes
+    while prime_list[-1] == 0:
+        if is_prime(number):
+            prime_list[indx] = number
             number += 2
+            indx   += 1
         else:
             number += 2
 
-    print(len(primeList))
-    return primeList[::-1]
+    return prime_list[-1]
 
-print(countPrimes(10001))
+#%%
+    
+res = countPrimes(10001)
+print(res)
