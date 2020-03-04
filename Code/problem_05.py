@@ -1,31 +1,43 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-# Problem setting
+
 """
-2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
-What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+@author: Pieter Huycke
+email:   pieter.huycke@ugent.be
+GitHub:  phuycke
 """
 
-# evenly divisible = having no remainder
-    # https://math.stackexchange.com/questions/58555/what-is-meant-by-evenly-divisible
 
-def evenlyDivided(upperbound):
-    """Finds the largest number that is evenly divisible by all numbers from 1 up to the upperbound."""
+#%%
 
-    satisfied = False
-    start = 1
-    checked = 0
-    while not satisfied:
-        for number in range(1, upperbound + 1):
-            if start % number != 0:
-                break
-            else:
-                checked += 1
-        if checked == upperbound:
-            satisfied = True
-        else:
-            checked = 0
-            start += 1
-    return start
+import numpy as np
 
-print(evenlyDivided(20))
+from problem_03 import prime_factorize
+
+#%%
+
+# compute the prime factors of all numbers <= 20
+prime_factors = []
+primes        = []
+
+for i in np.arange(1, 21):
+    result = prime_factorize(i)
+    prime_factors.append(result)
+    primes.extend(result)
+
+# for all primes, find the max occurence count, and multiply these together
+prod = 1
+for prime in set(primes):
+    counted, kept = -1, -1
+    for l in prime_factors:
+        if l.count(prime) > counted:
+            counted = l.count(prime)
+            kept    = prime
+    for i in range(counted):
+        prod *= prime
+  
+    
+#%%
+        
+print("Smallest number divisble by numbers in [1, 21]: {}".format(prod))

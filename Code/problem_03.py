@@ -1,15 +1,32 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-# Problem setting:
+
 """
-The prime factors of 13195 are 5, 7, 13 and 29.
-What is the largest prime factor of the number 600851475143 ?
+@author: Pieter Huycke
+email:   pieter.huycke@ugent.be
+GitHub:  phuycke
 """
 
 
-def is_prime(n):
+#%%
 
-    """Checks whether a number is a prime."""
+
+def is_prime(n : int) -> bool:
+    """
+    Returns whether a number is a prime or not
+
+    Parameters
+    ----------
+    n : int
+        The number to check for primality.
+
+    Returns
+    -------
+    bool
+        True if number is a prime, False otherwise.
+
+    """
 
     if n == 2 or n == 3:
         return True
@@ -30,10 +47,22 @@ def is_prime(n):
     return True
 
 
-def primeFactorize(number):
+def prime_factorize(number : int) -> list:
+    """
+    Returns a list of all the prime factors of the inputted number
 
-    """Factorizes a number into primes."""
+    Parameters
+    ----------
+    number : int
+        The number to factorize.
 
+    Returns
+    -------
+    list
+        Returns a list of the prime factors of the original number.
+
+    """
+    
     divisor = 2
     divisorList = []
 
@@ -50,4 +79,6 @@ def primeFactorize(number):
     return divisorList
 
 
-print(primeFactorize(45))
+#%%
+
+# print(max(prime_factorize(600851475143)))

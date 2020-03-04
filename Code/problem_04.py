@@ -1,40 +1,52 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-# Problem setting
+
 """
-A palindromic number reads the same both ways.
-The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
-Find the largest palindrome made from the product of two 3-digit numbers.
+@author: Pieter Huycke
+email:   pieter.huycke@ugent.be
+GitHub:  phuycke
 """
 
-def palindromeChecker(integer):
-    """Checks whether a certain number is a palindrome."""
 
-    checked = str(integer)
-    reverseChecked = checked[::-1]
-    equal = True
-    index = 0
-    while equal and index < len(checked):
-        if checked[index] != reverseChecked[index]:
-            equal = False
-        index += 1
-    return equal
-
-def palindromeSeeker(digits):
-    """Finds the product of all n digit numbers, and returns the largest product of the two that is a palindrome."""
-
-    maxNumber = 121
-    products = [11, 11]
-    for prod_one in range(10 ** digits):
-        for prod_two in range(10 ** digits):
-            product = prod_one * prod_two
-            if palindromeChecker(product) and product > maxNumber:
-                maxNumber = product
-                products = [prod_one, prod_two]
-
-    print(products)
-    return maxNumber
-
-print(palindromeSeeker(3))
+#%%
 
 
+def is_palindrome(number : int) -> bool:
+    """
+    Returns boolean depending on whether a number is a palindrome or not
+
+    Parameters
+    ----------
+    number : int
+        The number to check.
+
+    Returns
+    -------
+    bool
+        True if a palindrome, False if not.
+
+    """
+    
+    if list(str(number)) == list(str(number))[::-1]:
+        return True
+    else:
+        return False
+    
+
+#%%
+    
+import numpy as np
+
+
+largest_product = -1
+coef1, coef2    = -1, -1
+
+for i in np.arange(999, 99, -1):
+    for j in np.arange(999, 99, -1):
+        if is_palindrome(i * j) and (i * j) > largest_product:
+            largest_product = i * j
+            coef1, coef2    = i, j
+            
+print("Largest product: {}\nResult of {} times {}".format(largest_product, 
+                                                          coef1, coef2))

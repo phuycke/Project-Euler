@@ -11,20 +11,32 @@ GitHub:  phuycke
 
 #%%
 
-def fibonacci(limit):
-    """Find all fibonacci numbers below a certain limit, and sum those that are evenly divisible by two."""
+def fibonacci(limit : int) -> int:
+    """
+    Returns the sum of the even Fibonacci numbers below limit
 
-    startList     = [1,2]
-    criticalValue = 0
-    sumList       = [2]
-    while criticalValue < limit:
-        fibonacciValue = startList[-2] + startList[-1]
-        if fibonacciValue % 2 ==0:
-            sumList.append(fibonacciValue)
-        startList.append(fibonacciValue)
-        criticalValue = fibonacciValue
+    Parameters
+    ----------
+    limit : int
+        The upper limit, we compute fibo numbers while they are < limit
 
-    return sum(sumList)
+    Returns
+    -------
+    int
+        The final resulting sum
+
+    """    
+    
+    prev, following = 1, 2
+    fibo    = -1
+    sumList = 2
+    while fibo < limit:
+        fibo = prev + following
+        if fibo % 2 == 0:
+            sumList += fibo
+        prev, following = following, fibo
+
+    return sumList
 
 #%%
     
